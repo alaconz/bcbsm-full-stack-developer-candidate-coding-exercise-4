@@ -17,4 +17,4 @@ date
 ## Tech Stack:  
 Springboot  
 Angular/NextJS/ReactJS  
-MongoDB
+MongoDB/MySql
