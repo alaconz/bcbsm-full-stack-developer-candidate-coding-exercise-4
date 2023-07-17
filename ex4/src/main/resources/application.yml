@@ -1,0 +1,25 @@
+spring:
+  webflux:
+    cors:
+      allowed-origins: http://localhost:3000
+      max-age: 3600
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+  security:
+    user:
+      name: user
+      sprpassword: password
+  jpa:
+    defer-datasource-initialization: false
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+#    hibernate:
+#      ddl-auto: update
+bcbsm:
+    jwt:
+        expr: 700000

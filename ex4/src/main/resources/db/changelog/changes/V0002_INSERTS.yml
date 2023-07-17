@@ -1,0 +1,31 @@
+ databaseChangeLog:
+     - changeSet:
+           id: 0002-1
+           author: me
+           comment: id sequence
+#           preConditions:
+#             - onFail: MARK_RAN
+#               not:
+#                 - tableExists:
+#                     tableName: users
+           changes:
+             - sql:
+                 sql:
+                   INSERT INTO users (user_id,username, password)
+                   VALUES (NEXTVAL('USER_ID_SEQ'),'user', 'password'),
+                    (NEXTVAL('USER_ID_SEQ'),'admin', 'adminPassword');
+     - changeSet:
+         id: 0002-2
+         author: me
+         comment: id sequence
+#         preConditions:
+#          - onFail: MARK_RAN
+#            not:
+#              - tableExists:
+#                  tableName: role
+         changes:
+           - sql:
+               sql:
+                 INSERT INTO role (role_id, role)
+                 VALUES (nextval('role_id_seq'), 'admin'),
+                 (nextval('role_id_seq'), 'user');
